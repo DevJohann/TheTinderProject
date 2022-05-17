@@ -11,15 +11,16 @@ import javax.swing.JTextField;
 
 public class MainView {
 	
-	JButton loginButton;
-	JButton registerButton;
-	JLabel mainMessajeLabel;
-	JFrame mainFrame;
+	JButton loginButton = new JButton("Login");
+	JButton registerButton = new JButton("Register");
+	JLabel mainMessajeLabel = new JLabel("Tinder");
+	JFrame mainFrame = new JFrame();
 	
 	public MainView() {
 		mainFrame.setBounds(450, 100, 500, 500);
 		mainFrame.setLayout(null);
 		mainFrame.setVisible(true);
+		mainFrame.setTitle("Tinder");
 		
 		//LoginButton section
 		loginButton.setBounds(120, 120, 120, 40);
