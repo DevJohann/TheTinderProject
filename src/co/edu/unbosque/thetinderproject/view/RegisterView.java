@@ -2,6 +2,7 @@ package co.edu.unbosque.thetinderproject.view;
 
 import javax.swing.*;
 
+//Programador: Johann
 public class RegisterView {
 	JLabel nameLabelRegister = new JLabel("Usuario:");
 	JLabel passwordLabelRegister = new JLabel("Contraseña:");

@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 
 import co.edu.unbosque.thetinderproject.view.*;
 
+//Programador Johann
 public class MainController {
 	public MainController(MainView view, LoginView loginView, RegisterView registerView) {
 		//Login Button

@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+//Programador: Mauricio
 public class LoginView {
 	
 	JLabel nameLabelLogin;
