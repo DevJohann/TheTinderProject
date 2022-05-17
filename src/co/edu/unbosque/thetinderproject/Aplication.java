@@ -3,6 +3,7 @@ package co.edu.unbosque.thetinderproject;
 import co.edu.unbosque.thetinderproject.controller.MainController;
 import co.edu.unbosque.thetinderproject.view.LoginView;
 import co.edu.unbosque.thetinderproject.view.MainView;
+import co.edu.unbosque.thetinderproject.view.RegisterView;
 
 public class Aplication {
 
@@ -10,7 +11,8 @@ public class Aplication {
 		// TODO Auto-generated method stub
 		MainView view = new MainView();
 		LoginView loginView = new LoginView();
-		MainController controller = new MainController(view, loginView);
+		RegisterView registerView = new RegisterView();
+		MainController controller = new MainController(view, loginView, registerView);
 	}
 
 }
