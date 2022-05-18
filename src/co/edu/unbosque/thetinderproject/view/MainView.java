@@ -16,7 +16,7 @@ public class MainView {
 	JButton registerButton = new JButton("Registrarse");
 	JLabel mainMessageLabel = new JLabel("TINDER");
 	JLabel footer = new JLabel("By: Crypted Security ©");
-	JFrame mainFrame = new JFrame();
+	static JFrame mainFrame = new JFrame();
 	
 	public MainView() {
 		mainFrame.setBounds(450, 100, 500, 500);
@@ -40,6 +40,7 @@ public class MainView {
 		//Footer section
 		footer.setBounds(182, 400, 150, 40);
 		footer.setFont(new Font("Serif", Font.ITALIC, 12));
+		//footer.setHorizontalAlignment(50);
 		mainFrame.add(footer);
 	}
 	public JButton getLoginButton() {

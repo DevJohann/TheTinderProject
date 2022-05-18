@@ -10,9 +10,7 @@ public class Aplication {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		MainView view = new MainView();
-		LoginView loginView = new LoginView();
-		RegisterView registerView = new RegisterView();
-		MainController controller = new MainController(view, loginView, registerView);
+		MainController controller = new MainController(view);
 	}
 
 }
