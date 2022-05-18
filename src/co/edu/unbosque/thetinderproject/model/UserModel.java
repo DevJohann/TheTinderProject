@@ -1,4 +1,5 @@
 package co.edu.unbosque.thetinderproject.model;
+import java.util.*;
 
 public class UserModel {
 	
@@ -14,6 +15,8 @@ public class UserModel {
 	private String gender;
 	private String description;
 	private boolean firstTimer;
+	private ArrayList<String> gustos = new ArrayList<String>();
+	private ArrayList<String> preferences = new ArrayList<String>();
 	
 	public UserModel(String username, String password) {
 		this.username = username;
