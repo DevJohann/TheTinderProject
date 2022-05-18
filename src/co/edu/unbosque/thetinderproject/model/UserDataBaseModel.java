@@ -10,7 +10,7 @@ public class UserDataBaseModel {
 	
 	public UserModel searchUser(String username) {
 		for(UserModel user : UserDB) {
-			if(user.getUsernameUM().equals()) {
+			if(user.getUsernameUM().equals(username)) {
 				return user;
 			}
 		}
