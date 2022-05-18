@@ -13,13 +13,16 @@ import javax.swing.JTextField;
 //Programador: Mauricio
 public class LoginView {
 	
-	JLabel nameLabelLogin;
-	JLabel passwordLabelLogin;
-	JTextField nameFieldLogin;
-	JTextField passwordFieldLogin;
-	JButton sendDataButtonLogin;
+	JLabel nameLabelLogin = new JLabel("Nombre de usuario");
+	JLabel passwordLabelLogin = new JLabel("Contraseña");
+	JTextField nameFieldLogin = new JTextField();
+	JTextField passwordFieldLogin = new JTextField();
+	JButton sendDataButtonLogin = new JButton("Enviar");
+	JButton backButtonLogin = new JButton("Volver");
 	
 	public void showLoginView() {
+		
+		
 		
 	}
 	public String getNameTFieldLogin() {
@@ -30,6 +33,9 @@ public class LoginView {
 	}
 	public JButton getSendDataButtonLogin() {
 		return sendDataButtonLogin;
+	}
+	public JButton getBackButton() {
+		return backButtonLogin;
 	}
 
 }
