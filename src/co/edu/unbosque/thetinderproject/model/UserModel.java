@@ -1,5 +1,6 @@
 package co.edu.unbosque.thetinderproject.model;
 
 public class UserModel {
-
+	
+	//Programmer: Mauricio
 }
