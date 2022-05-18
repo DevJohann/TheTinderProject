@@ -9,9 +9,11 @@ public class RegisterView {
 	JTextField nameFieldRegister = new JTextField();
 	JTextField passwordFieldRegister = new JTextField();
 	JButton sendDataButtonRegister = new JButton("Enviar");
+	JButton backButtonRegister = new JButton("Volver");
+	
 	
 	public void showRegisterView() {
-		
+
 	}
 	
 	public String getPasswordRegister() {
@@ -22,5 +24,8 @@ public class RegisterView {
 	}
 	public JButton getSendDataButtonRegister() {
 		return this.sendDataButtonRegister;
+	}
+	public JButton getBackButtonRegister() {
+		return this.backButtonRegister;
 	}
 }
