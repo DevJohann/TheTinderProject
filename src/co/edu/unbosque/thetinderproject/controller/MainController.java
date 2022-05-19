@@ -24,6 +24,8 @@ public class MainController {
 			public void actionPerformed(ActionEvent e) {
 				view.getMainFrame().getContentPane().removeAll();
 				view.getMainFrame().repaint();
+				view.getMainFrame().dispose();
+				new RegisterView();
 				//registerView.show();
 			}
 		});
