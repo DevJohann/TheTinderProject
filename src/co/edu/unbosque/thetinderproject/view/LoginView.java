@@ -13,9 +13,10 @@ import javax.swing.JTextField;
 //Programador: Mauricio
 public class LoginView {
 	
-	JLabel nameLabelLogin = new JLabel("Usuario:");
+	JLabel usernameLabelLogin = new JLabel("Usuario:");
 	JLabel passwordLabelLogin = new JLabel("Contraseña:");
 	JLabel mainLabelLogin = new JLabel("LOGIN");
+	JLabel footerLabelLogin = new JLabel();
 	JTextField nameFieldLogin = new JTextField();
 	JTextField passwordFieldLogin = new JTextField();
 	JButton sendDataButtonLogin = new JButton("Enviar");
@@ -39,9 +40,9 @@ public class LoginView {
 			//MainView.mainFrame.add(mainLabelLogin);
 		
 		//NameLabel section
-		nameLabelLogin.setBounds(60, 150, 180, 35);
-		nameLabelLogin.setFont(new Font("Serif", Font.BOLD, 20));
-		mainFrameLogin.add(nameLabelLogin);
+		usernameLabelLogin.setBounds(60, 150, 180, 35);
+		usernameLabelLogin.setFont(new Font("Serif", Font.BOLD, 20));
+		mainFrameLogin.add(usernameLabelLogin);
 			//MainView.mainFrame.add(nameLabelLogin);
 		
 		//NameField section
@@ -65,13 +66,18 @@ public class LoginView {
 		mainFrameLogin.add(sendDataButtonLogin);
 			//MainView.mainFrame.add(sendDataButtonLogin);
 		
+		//footerLabel section
+		footerLabelLogin.setBounds(165, 350, 400, 40);
+		footerLabelLogin.setFont(new Font("Serif", Font.BOLD, 15));
+		mainFrameLogin.add(footerLabelLogin);
+		
 		//backButton section
 		backButtonLogin.setBounds(15, 420, 100, 30);
 		mainFrameLogin.add(backButtonLogin);
 			//MainView.mainFrame.add(backButtonLogin);
 	}
 	
-	public String getNameTFieldLogin() {
+	public String getUsernameTFieldLogin() {
 		return nameFieldLogin.getText();
 	}
 	public String getPasswordTFieldLogin() {
@@ -85,6 +91,9 @@ public class LoginView {
 	}
 	public JFrame getMainFrameLogin() {
 		return this.mainFrameLogin;
+	}
+	public JLabel getFooterLabelLogin() {
+		return this.footerLabelLogin;
 	}
 
 

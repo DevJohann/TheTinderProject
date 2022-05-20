@@ -14,7 +14,7 @@ public class UserModel {
 	private int age;
 	private String gender;
 	private String description;
-	private boolean firstTimer;
+	private boolean firstTimer = true;
 	private ArrayList<String> gustos = new ArrayList<String>();
 	private ArrayList<String> preferences = new ArrayList<String>();
 	

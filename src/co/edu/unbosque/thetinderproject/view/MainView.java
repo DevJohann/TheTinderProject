@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import co.edu.unbosque.thetinderproject.model.UserDataBaseModel;
+
 public class MainView {
 	
 	JButton loginButton = new JButton("Login");
@@ -19,6 +21,7 @@ public class MainView {
 	static JFrame mainFrame = new JFrame();
 	
 	public MainView() {
+		UserDataBaseModel.addDummies();
 		mainFrame.setBounds(450, 100, 500, 500);
 		mainFrame.setLayout(null);
 		mainFrame.setVisible(true);

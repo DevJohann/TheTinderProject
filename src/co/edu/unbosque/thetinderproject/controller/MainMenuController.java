@@ -1,5 +1,9 @@
 package co.edu.unbosque.thetinderproject.controller;
 
-public class MainMenuController {
+import co.edu.unbosque.thetinderproject.view.MainMenuView;
 
+public class MainMenuController {
+	public MainMenuController(MainMenuView mainMenuView) {
+		
+	}
 }
