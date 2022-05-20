@@ -8,7 +8,7 @@ import javax.swing.*;
 public class RegisterView {
 	JLabel nameLabelRegister = new JLabel("Usuario:");
 	JLabel passwordLabelRegister = new JLabel("Contraseña:");
-	JLabel mainLabelRegister = new JLabel("REGISTER");
+	JLabel mainLabelRegister = new JLabel("REGISTRO");
 	JTextField nameFieldRegister = new JTextField();
 	JTextField passwordFieldRegister = new JTextField();
 	JButton sendDataButtonRegister = new JButton("Enviar");
@@ -73,5 +73,8 @@ public class RegisterView {
 	}
 	public JButton getBackButtonRegister() {
 		return this.backButtonRegister;
+	}
+	public JFrame getRegisterJFrame() {
+		return this.mainFrameRegister;
 	}
 }

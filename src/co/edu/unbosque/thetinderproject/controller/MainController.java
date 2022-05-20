@@ -25,7 +25,7 @@ public class MainController {
 				view.getMainFrame().getContentPane().removeAll();
 				view.getMainFrame().repaint();
 				view.getMainFrame().dispose();
-				new RegisterView();
+				new RegisterController(new RegisterView());
 				//registerView.show();
 			}
 		});

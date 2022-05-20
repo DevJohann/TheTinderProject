@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 public class MainView {
 	
 	JButton loginButton = new JButton("Login");
-	JButton registerButton = new JButton("Register");
+	JButton registerButton = new JButton("Registrarse");
 	JLabel mainMessageLabel = new JLabel("TINDER");
 	JLabel footer = new JLabel("By: Crypted Security ©");
 	static JFrame mainFrame = new JFrame();
