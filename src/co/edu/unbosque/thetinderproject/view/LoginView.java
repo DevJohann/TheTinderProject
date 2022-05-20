@@ -83,5 +83,9 @@ public class LoginView {
 	public JButton getBackButton() {
 		return backButtonLogin;
 	}
+	public JFrame getMainFrameLogin() {
+		return this.mainFrameLogin;
+	}
+
 
 }

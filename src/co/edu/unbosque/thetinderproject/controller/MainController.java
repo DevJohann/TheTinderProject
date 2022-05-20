@@ -14,7 +14,7 @@ public class MainController {
 				view.getMainFrame().getContentPane().removeAll();
 				view.getMainFrame().repaint();
 				view.getMainFrame().dispose();
-				new LoginView();
+				new LoginController(new LoginView());
 			}
 		});
 		
