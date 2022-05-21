@@ -14,6 +14,8 @@ public class NewUserDataView {
 	JLabel nationalityLabelNewUD = new JLabel("Nacionalidad:");
 	JLabel mainLabelNewUD = new JLabel("Información personal");
 	JLabel descriptionLabelNewUD = new JLabel("Cuentanos de ti");
+	JLabel cityOfResidenceLabelNewUD = new JLabel("Ciudad:");
+	JTextField cityOfResidenceFieldNewUD = new JTextField();
 	JTextField nameFieldNewUD = new JTextField();
 	JTextField genderFieldNewUD = new JTextField();
 	JTextField ageFieldNewUD = new JTextField();
@@ -36,39 +38,39 @@ public class NewUserDataView {
 		mainFrameNewUserDataView.add(mainLabelNewUD);
 		
 		// NameLabel Section
-		nameLabelNewUD.setBounds(70, 80, 400, 40);
+		nameLabelNewUD.setBounds(70, 70, 400, 40);
 		nameLabelNewUD.setFont(new Font("Serif", Font.BOLD,16));
 		mainFrameNewUserDataView.add(nameLabelNewUD);
 		
 		//NameField Section
-		nameFieldNewUD.setBounds(70, 120, 250, 25);
+		nameFieldNewUD.setBounds(70, 110, 250, 25);
 		mainFrameNewUserDataView.add(nameFieldNewUD);
 		
 		//GenderLabel section
-		genderLabelNewUD.setBounds(70, 150, 400, 40);
+		genderLabelNewUD.setBounds(70, 140, 400, 40);
 		genderLabelNewUD.setFont(new Font("Serif", Font.BOLD, 16));
 		mainFrameNewUserDataView.add(genderLabelNewUD);
 		
 		//GenderField section
-		genderFieldNewUD.setBounds(140, 155, 150, 25);
+		genderFieldNewUD.setBounds(140, 145, 150, 25);
 		mainFrameNewUserDataView.add(genderFieldNewUD);
 		
 		//AgeLabel section (Add try-catch)
-		ageLabelNewUD.setBounds(70, 180, 400, 40);
+		ageLabelNewUD.setBounds(70, 170, 400, 40);
 		ageLabelNewUD.setFont(new Font("Serif", Font.BOLD, 16));
 		mainFrameNewUserDataView.add(ageLabelNewUD);
 		
 		//AgeField section (Add try-catch)
-		ageFieldNewUD.setBounds(140, 185, 60, 25);
+		ageFieldNewUD.setBounds(140, 175, 60, 25);
 		mainFrameNewUserDataView.add(ageFieldNewUD);
 		
 		//NationalityLabel section
-		nationalityLabelNewUD.setBounds(70, 210, 400, 40);
+		nationalityLabelNewUD.setBounds(70, 200, 400, 40);
 		nationalityLabelNewUD.setFont(new Font("Serif", Font.BOLD, 16));
 		mainFrameNewUserDataView.add(nationalityLabelNewUD);
 		
 		//NationalityField section
-		nationalityFieldNewUD.setBounds(180, 215, 150, 25);
+		nationalityFieldNewUD.setBounds(180, 205, 150, 25);
 		mainFrameNewUserDataView.add(nationalityFieldNewUD);
 		
 		// DescriptionLabel Section
@@ -89,7 +91,15 @@ public class NewUserDataView {
 		backButtonNewUD.setBounds(15, 420, 80, 30);
 		mainFrameNewUserDataView.add(backButtonNewUD);
 		
+		//CityOfResidenceLabel section
+		cityOfResidenceLabelNewUD.setBounds(70,	230, 400, 40);
+		cityOfResidenceLabelNewUD.setFont(new Font("Serif",Font.BOLD,16));
+		mainFrameNewUserDataView.add(cityOfResidenceLabelNewUD);
+		
+		
 		//CityOfResidence section
+		cityOfResidenceFieldNewUD.setBounds(180, 235, 100, 25);
+		mainFrameNewUserDataView.add(cityOfResidenceFieldNewUD);
 	}
 	
 	public String getNameFieldNewUD() {

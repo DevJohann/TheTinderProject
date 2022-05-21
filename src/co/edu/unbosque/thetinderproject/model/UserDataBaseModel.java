@@ -51,8 +51,14 @@ public class UserDataBaseModel {
 		}
 		return false;
 	}
-	public static void setUserNewData(/*Data*/) {
+	public static void setUserNewData(String Nombre, String Nacionalidad , int Edad, String Genero , String Ciudad, String Descripcion) {
 		//NewUserData
+		WorkingUser.setName(Nombre);
+		WorkingUser.setNacionality(Nacionalidad);
+		WorkingUser.setAge(Edad);
+		WorkingUser.setGender(Genero);
+		WorkingUser.setCityOfResidence(Ciudad);
+		WorkingUser.setDescription(Descripcion);
 	}
 	
 	//JFrame.setLocationRelativeTo(null)
