@@ -9,6 +9,7 @@ public class RegisterView {
 	JLabel nameLabelRegister = new JLabel("Usuario:");
 	JLabel passwordLabelRegister = new JLabel("Contraseña:");
 	JLabel mainLabelRegister = new JLabel("REGISTRO");
+	JLabel errorLabelRegister = new JLabel("Este usuario ya existe");
 	JTextField nameFieldRegister = new JTextField();
 	JTextField passwordFieldRegister = new JTextField();
 	JButton sendDataButtonRegister = new JButton("Enviar");
@@ -76,5 +77,8 @@ public class RegisterView {
 	}
 	public JFrame getRegisterJFrame() {
 		return this.mainFrameRegister;
+	}
+	public JLabel getErrorLabelRegister() {
+		return this.errorLabelRegister;
 	}
 }

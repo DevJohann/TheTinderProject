@@ -2,6 +2,7 @@ package co.edu.unbosque.thetinderproject.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import co.edu.unbosque.thetinderproject.model.RegisterModel;
 import co.edu.unbosque.thetinderproject.view.*;
 
 //Programador Johann
@@ -25,7 +26,7 @@ public class MainController {
 				view.getMainFrame().getContentPane().removeAll();
 				view.getMainFrame().repaint();
 				view.getMainFrame().dispose();
-				new RegisterController(new RegisterView());
+				new RegisterController(new RegisterView(), new RegisterModel());
 				//registerView.show();
 			}
 		});

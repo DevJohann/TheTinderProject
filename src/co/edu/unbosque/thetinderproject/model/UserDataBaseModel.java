@@ -29,6 +29,15 @@ public class UserDataBaseModel {
 		}
 		return null;
 	}
+	public static boolean checkRepeated(String username) {
+		for(UserModel user : UserDB) {
+			if(user.getUsernameUM().equals(username)) {
+				return true;
+				
+			}
+		}
+		return false;
+	}
 	public static boolean checkFirstTimer(String username) {
 		if(WorkingUser.getFirstTimerUM()) {
 			return true;
