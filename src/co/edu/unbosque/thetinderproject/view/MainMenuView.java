@@ -20,9 +20,9 @@ public class MainMenuView {
 		mainFrameMMView.setVisible(true);
 		
 		//MainLabel section
-		mainTextLabelMMView.setBounds(70, 20, 400, 40);
-		mainTextLabelMMView.setFont(new Font("Serif", Font.BOLD, 20));
-		mainFrameMMView.add(mainTextLabelMMView);
+		//mainTextLabelMMView.setBounds(150, 20, 400, 40);
+		//mainTextLabelMMView.setFont(new Font("Serif", Font.BOLD, 30));
+		//mainFrameMMView.add(mainTextLabelMMView);
 	}
 	
 	public JButton getLogOutButtonMMView() {

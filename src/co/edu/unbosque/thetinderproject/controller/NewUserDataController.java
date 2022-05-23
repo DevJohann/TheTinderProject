@@ -31,18 +31,24 @@ public class NewUserDataController {
 					String gender = NUDView.getGenderComboBoxNewUD();
 					String cityOfResidence = NUDView.getCityOfResidenceNewUD();
 					String userDescription = NUDView.getDescriptionFieldNewUD();
-					if(name == "") {
+					if(name.length() == 0) {
 						NUDView.setErrorMessageNewUD("Debe ingresar un nombre");
 					}
-					else if(nationality == "") {
+					else if(nationality.length() == 0) {
 						NUDView.setErrorMessageNewUD("Debe llenar todos los campos");
 					}
 					else {
 						UserDataBaseModel.setUserNewData(name, nationality, age, gender, cityOfResidence, userDescription);
-						NUDView.getMainFrameNewUD().getContentPane().removeAll();
-						NUDView.getMainFrameNewUD().dispose();
-						new MainMenuController(new MainMenuView());
+						if(UserDataBaseModel.checkFilledData() == false) {
+							NUDView.setErrorMessageNewUD("Debe ingresar una descripción");
+						}
+						else {
+							NUDView.getMainFrameNewUD().getContentPane().removeAll();
+							NUDView.getMainFrameNewUD().dispose();
+							new MainMenuController(new MainMenuView());
+						}
 					}
+						
 				}
 				catch(NumberFormatException x) {
 					NUDView.setErrorMessageNewUD("Debe ingresar una edad válida");

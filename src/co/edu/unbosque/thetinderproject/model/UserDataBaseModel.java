@@ -60,6 +60,12 @@ public class UserDataBaseModel {
 		WorkingUser.setCityOfResidence(Ciudad);
 		WorkingUser.setDescription(Descripcion);
 	}
+	public static boolean checkFilledData() {
+		if(WorkingUser.getDescriptionUM().length() == 0) {
+			return false;
+		}
+		return true;
+	}
 	
 	//JFrame.setLocationRelativeTo(null)
 }
