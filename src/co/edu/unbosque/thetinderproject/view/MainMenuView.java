@@ -39,6 +39,10 @@ public class MainMenuView {
 		preferencesButtonMMView.setBounds(180, 240, 120, 40);
 		mainFrameMMView.add(preferencesButtonMMView);
 		
+		// LogOutButtonMMView
+		LogOutButtonMMView.setBounds(15, 420, 120, 30);
+		mainFrameMMView.add(LogOutButtonMMView);
+		
 		//MainLabel section
 		//mainTextLabelMMView.setBounds(150, 20, 400, 40);
 		//mainTextLabelMMView.setFont(new Font("Serif", Font.BOLD, 30));
