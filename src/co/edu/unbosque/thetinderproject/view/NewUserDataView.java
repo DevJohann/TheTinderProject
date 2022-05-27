@@ -11,6 +11,8 @@ public class NewUserDataView {
 	
 	JLabel nameLabelNewUD = new JLabel("Nombre:");
 	String[] genders = {"Hombre", "Mujer"};
+	String[] cities = {"Bogotá", "Cali", "Medellín", "Gama"};
+	String[] sources = {"foto1.jpg", "foto2.jpg", "foto3.jpg"};
 	JLabel genderLabelNewUD = new JLabel("Genero:");
 	JLabel ageLabelNewUD = new JLabel("Edad:");
 	JLabel nationalityLabelNewUD = new JLabel("Nacionalidad:");
@@ -18,7 +20,9 @@ public class NewUserDataView {
 	JLabel descriptionLabelNewUD = new JLabel("Cuentanos de ti");
 	JLabel cityOfResidenceLabelNewUD = new JLabel("Ciudad:");
 	JLabel errorLabelNewUD = new JLabel("");
-	JTextField cityOfResidenceFieldNewUD = new JTextField("");
+	JLabel pictureLabelNewUD = new JLabel("Foto:");
+	JComboBox<String> pictureComboBoxNewUD = new JComboBox(sources);
+	JComboBox<String> cityOfResidenceFieldNewUD = new JComboBox(cities);
 	JTextField nameFieldNewUD = new JTextField("");
 	JComboBox<String> genderComboBoxNewUD = new JComboBox<String>(genders);
 	JTextField ageFieldNewUD = new JTextField("");
@@ -26,6 +30,7 @@ public class NewUserDataView {
 	JTextArea descriptionTextAreaNewUD = new JTextArea("");
 	JButton sendDataButtonNewUD = new JButton("Enviar");
 	JButton backButtonNewUD = new JButton("Volver");
+	//JFileChooser selectorImageNewUD = new JFileChooser();
 	JFrame mainFrameNewUserDataView;
 	
 	public NewUserDataView() {
@@ -68,6 +73,15 @@ public class NewUserDataView {
 		ageFieldNewUD.setBounds(140, 175, 60, 25);
 		mainFrameNewUserDataView.add(ageFieldNewUD);
 		
+		//PictureLabel section
+		pictureLabelNewUD.setBounds(260, 230, 400, 40);
+		pictureLabelNewUD.setFont(new Font("Serif", Font.BOLD, 16));
+		mainFrameNewUserDataView.add(pictureLabelNewUD);
+		
+		//PictureComboBox section
+		pictureComboBoxNewUD.setBounds(300, 240, 120, 20);
+		mainFrameNewUserDataView.add(pictureComboBoxNewUD);
+		
 		//NationalityLabel section
 		nationalityLabelNewUD.setBounds(70, 200, 400, 40);
 		nationalityLabelNewUD.setFont(new Font("Serif", Font.BOLD, 16));
@@ -102,7 +116,8 @@ public class NewUserDataView {
 		
 		
 		//CityOfResidence section
-		cityOfResidenceFieldNewUD.setBounds(180, 235, 100, 25);
+		cityOfResidenceFieldNewUD.setBounds(130, 235, 100, 25);
+		cityOfResidenceFieldNewUD.setSelectedIndex(0);
 		mainFrameNewUserDataView.add(cityOfResidenceFieldNewUD);
 		
 		//ErrorLabel section
@@ -136,7 +151,7 @@ public class NewUserDataView {
 		return this.mainFrameNewUserDataView;
 	}
 	public String getCityOfResidenceNewUD() {
-		return this.cityOfResidenceFieldNewUD.getText();
+		return this.genderComboBoxNewUD.getItemAt(genderComboBoxNewUD.getSelectedIndex());
 	}
 	public String getDescriptionNewUD() {
 		return this.descriptionTextAreaNewUD.getText();
@@ -145,4 +160,10 @@ public class NewUserDataView {
 	public void setErrorMessageNewUD(String value) {
 		this.errorLabelNewUD.setText(value);
 	}
+
+	public String getPictureComboBoxNewUD() {
+		return pictureComboBoxNewUD.getItemAt(pictureComboBoxNewUD.getSelectedIndex());
+	}
+	
+	
 }

@@ -60,7 +60,7 @@ public class UserDataBaseModel {
 		}
 		return false;
 	}
-	public static void setUserNewData(String Nombre, String Nacionalidad , int Edad, String Genero , String Ciudad, String Descripcion) {
+	public static void setUserNewData(String Nombre, String Nacionalidad , int Edad, String Genero , String Ciudad, String Descripcion, String pictureSrc) {
 		//NewUserData
 		WorkingUser.setName(Nombre);
 		WorkingUser.setNacionality(Nacionalidad);
@@ -68,6 +68,7 @@ public class UserDataBaseModel {
 		WorkingUser.setGender(Genero);
 		WorkingUser.setCityOfResidence(Ciudad);
 		WorkingUser.setDescription(Descripcion);
+		WorkingUser.setPicture(pictureSrc);
 	}
 	public static boolean checkFilledData() {
 		if(WorkingUser.getDescriptionUM().length() == 0) {

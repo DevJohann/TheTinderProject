@@ -35,7 +35,7 @@ public class LoginController {
 						loginView.getMainFrameLogin().getContentPane().removeAll();
 						loginView.getMainFrameLogin().repaint();
 						loginView.getMainFrameLogin().dispose();
-						//UserDataBaseModel.setFirstTimer(false); the user must fill all the fields before changing this
+						UserDataBaseModel.setFirstTimer(false);
 						new NewUserDataController(new NewUserDataView());
 					}
 					else {

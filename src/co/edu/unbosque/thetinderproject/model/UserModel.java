@@ -8,7 +8,7 @@ public class UserModel {
 	private String name;
 	private String username;
 	private String password;
-	private String picture;
+	private String picture; //Ruta a la foto
 	private String nacionality;
 	private String cityOfResidence;
 	private int age;

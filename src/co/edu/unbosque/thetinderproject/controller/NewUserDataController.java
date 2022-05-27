@@ -21,6 +21,7 @@ public class NewUserDataController {
 			}
 		});
 		
+		//SendDataButton action
 		NUDView.getSendDataButtonNewUD().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -31,6 +32,7 @@ public class NewUserDataController {
 					String gender = NUDView.getGenderComboBoxNewUD();
 					String cityOfResidence = NUDView.getCityOfResidenceNewUD();
 					String userDescription = NUDView.getDescriptionFieldNewUD();
+					String pictureSource = NUDView.getPictureComboBoxNewUD();
 					if(name.length() == 0) {
 						NUDView.setErrorMessageNewUD("Debe ingresar un nombre");
 					}
@@ -38,7 +40,7 @@ public class NewUserDataController {
 						NUDView.setErrorMessageNewUD("Debe llenar todos los campos");
 					}
 					else {
-						UserDataBaseModel.setUserNewData(name, nationality, age, gender, cityOfResidence, userDescription);
+						UserDataBaseModel.setUserNewData(name, nationality, age, gender, cityOfResidence, userDescription, pictureSource);
 						if(UserDataBaseModel.checkFilledData() == false) {
 							NUDView.setErrorMessageNewUD("Debe ingresar una descripción");
 						}

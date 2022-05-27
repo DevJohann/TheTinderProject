@@ -19,7 +19,7 @@ public class ProfileView {
 	JButton dislikeButtonProfileView = new JButton("💩");
 	JButton backButtonProfileView = new JButton("Volver");
 	JLabel descriptionLabelProfileView = new JLabel("Me gusta el rock");
-	JLabel nameLabelProfileView = new JLabel("Mauricio Beltrán");
+	JLabel nameLabelProfileView = new JLabel("Edinson Mauricio Beltrán Gomez");
 	JLabel ageLabelProfileView = new JLabel("20");
 	
 	JPanel panelProfileView = new JPanel();
@@ -29,30 +29,30 @@ public class ProfileView {
 		mainFrameProfileView.setLayout(null);
 		mainFrameProfileView.setBounds(450, 80, 500, 600);
 		mainFrameProfileView.setVisible(true);
-		panelProfileView.setBounds(125, 125, 200, 200);
+		panelProfileView.setBounds(40, 20, 400, 400);
 		
 		//descriptionLabelprofileView section
-		descriptionLabelProfileView.setBounds(50, 390, 400, 40);
+		descriptionLabelProfileView.setBounds(40, 470, 400, 40);
 		descriptionLabelProfileView.setFont(new Font("Serif", Font.BOLD, 20));
 		mainFrameProfileView.add(descriptionLabelProfileView);
 		
 		//nameLabelprofileView
-		nameLabelProfileView.setBounds(50, 360, 400, 40);
+		nameLabelProfileView.setBounds(40, 430, 400, 40);
 		nameLabelProfileView.setFont(new Font("Serif", Font.BOLD, 20));
 		mainFrameProfileView.add(nameLabelProfileView);
 		
 		//ageLabelprofileView
-		ageLabelProfileView.setBounds(50, 330, 400, 40);
+		ageLabelProfileView.setBounds(40, 450, 400, 40);
 		ageLabelProfileView.setFont(new Font("Serif", Font.BOLD, 20));
 		mainFrameProfileView.add(ageLabelProfileView);
 		
 		//LikeButtonProfileView section
-		likeButtonProfileView.setBounds(50, 450, 60, 40);
+		likeButtonProfileView.setBounds(180, 510, 60, 40);
 		likeButtonProfileView.setFont(new Font("Serif", Font.PLAIN, 20));
 		mainFrameProfileView.add(likeButtonProfileView);
 		
 		//dislikeButtonProfileView
-		dislikeButtonProfileView.setBounds(365, 450, 60, 40);
+		dislikeButtonProfileView.setBounds(300, 510, 60, 40);
 		dislikeButtonProfileView.setFont(new Font("Serif", Font.PLAIN, 20));
 		mainFrameProfileView.add(dislikeButtonProfileView);
 		
@@ -79,5 +79,12 @@ public class ProfileView {
 	public JButton getDislikeProfileView() {
 		return dislikeButtonProfileView;
 	}
+	public JButton getBackButtonProfileView() {
+		return backButtonProfileView;
+	}
+	public JFrame getMainFrameProfileView() {
+		return mainFrameProfileView;
+	}
 
+	
 }
