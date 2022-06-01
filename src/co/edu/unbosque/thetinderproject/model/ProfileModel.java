@@ -6,8 +6,9 @@ public class ProfileModel {
 		
 	}
 	
-	public void changeProfile() {
+	public UserModel getRandomUser() {
 		
+		return UserDataBaseModel.returnRandomUser();
 	}
 	
 

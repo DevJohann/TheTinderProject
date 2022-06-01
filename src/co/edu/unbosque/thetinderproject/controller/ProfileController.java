@@ -19,14 +19,16 @@ public class ProfileController {
 				new MainMenuController(new MainMenuView());
 			}
 		});
-		
+		// RANDOM
 		//LikeButton action
 		profileView.getLikeProfileView().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				profileModel.getRandomUser();
 			}
 		});
+		
 	}
 
 }

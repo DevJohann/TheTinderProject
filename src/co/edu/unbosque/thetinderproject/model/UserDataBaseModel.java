@@ -1,6 +1,7 @@
 package co.edu.unbosque.thetinderproject.model;
 
 import java.util.ArrayList;
+import java.util.Random;
 import co.edu.unbosque.thetinderproject.model.*;
 
 public class UserDataBaseModel {
@@ -9,6 +10,7 @@ public class UserDataBaseModel {
 	//(Application local database)
 	private static ArrayList<UserModel> UserDB = new ArrayList<UserModel>();
 	private static UserModel WorkingUser;
+	public static Random rand = new Random();
 	
 	//Dummies section
 	public static void addDummies() {
@@ -75,6 +77,11 @@ public class UserDataBaseModel {
 			return false;
 		}
 		return true;
+	}
+	
+	public static UserModel returnRandomUser() {
+		int numRandom = rand.nextInt(UserDB.size());
+		return UserDB.get(numRandom);
 	}
 	
 	//JFrame.setLocationRelativeTo(null)
