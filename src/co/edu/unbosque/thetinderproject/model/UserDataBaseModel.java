@@ -15,10 +15,30 @@ public class UserDataBaseModel {
 	//Dummies section
 	public static void addDummies() {
 		UserDB.add(new UserModel("admin", "1234"));
+		UserDB.get(0).setName("Admin");
+		UserDB.get(0).setAge(19);
+		UserDB.get(0).setDescription("Descripción de prueba");
+		UserDB.get(0).setPicture("foto1.jpg");
 		UserDB.add(new UserModel("root", "toor"));
+		UserDB.get(1).setName("ROOT");
+		UserDB.get(1).setAge(19);
+		UserDB.get(1).setDescription("Descripción de prueba");
+		UserDB.get(1).setPicture("foto2.jpg");
 		UserDB.add(new UserModel("Mauricio", "1234"));
+		UserDB.get(2).setName("Edison Mauricio Beltran Garzón");
+		UserDB.get(2).setAge(19);
+		UserDB.get(2).setDescription("Descripción de prueba");
+		UserDB.get(2).setPicture("foto3.jpg");
 		UserDB.add(new UserModel("Jennifer", "1234"));
+		UserDB.get(3).setName("Jennifer Penagos");
+		UserDB.get(3).setAge(19);
+		UserDB.get(3).setDescription("Descripción de prueba");
+		UserDB.get(3).setPicture("foto1.jpg");
 		UserDB.add(new UserModel("Johann", "1234"));
+		UserDB.get(4).setName("Johann Felipe");
+		UserDB.get(4).setAge(19);
+		UserDB.get(4).setDescription("Descripción de prueba");
+		UserDB.get(4).setPicture("foto1.jpg");
 	}
 	
 	//End of dummies section
