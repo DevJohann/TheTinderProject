@@ -61,8 +61,9 @@ public class ProfileView {
 		mainFrameProfileView.add(backButtonProfileView);
 		
 		//ImageView section
-		try {
-			BufferedImage imageProfile = ImageIO.read(new File("perrito.jpg"));
+		try { 
+			String pictureSrc = "";
+			BufferedImage imageProfile = ImageIO.read(new File(pictureSrc));
 			JLabel pictureProfileView = new JLabel(new ImageIcon(imageProfile));
 			panelProfileView.add(pictureProfileView);
 			mainFrameProfileView.add(panelProfileView);
@@ -85,6 +86,15 @@ public class ProfileView {
 	public JFrame getMainFrameProfileView() {
 		return mainFrameProfileView;
 	}
+	public void setDescriptionLabelProfileView(String descriptionLabelProfileView) {
+		this.descriptionLabelProfileView.setText(descriptionLabelProfileView);
+	}
+	public void setNameLabelProfileView(String nameLabelProfileView) {
+		this.nameLabelProfileView.setText(nameLabelProfileView);
+	}
+	public void setAgeLabelProfileView(String ageLabelProfileView) {
+		this.ageLabelProfileView.setText(ageLabelProfileView);	}
+	
 
 	
 }

@@ -79,10 +79,25 @@ public class UserDataBaseModel {
 		return true;
 	}
 	
-	public static UserModel returnRandomUser() {
+	public static ArrayList<String> returnRandomUser() {
+		ArrayList<String> returnableData = new ArrayList<String>();
 		int numRandom = rand.nextInt(UserDB.size());
-		return UserDB.get(numRandom);
+		//return UserDB.get(numRandom);
+		UserModel returnableUser = UserDB.get(numRandom);
+		while(returnableUser.getUsernameUM().equals(WorkingUser.getUsernameUM())) {
+			numRandom = rand.nextInt(UserDB.size());
+			
+			
+		}
+		returnableData.add(returnableUser.getNameUM());
+		returnableData.add(returnableUser.getAgeUM()+"");
+		returnableData.add(returnableUser.getDescriptionUM());
+		returnableData.add(returnableUser.getPictureUM());
+		return returnableData;
+			
 	}
+	
+	
 	
 	//JFrame.setLocationRelativeTo(null)
 }

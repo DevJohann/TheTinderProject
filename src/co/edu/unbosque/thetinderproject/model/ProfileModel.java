@@ -5,11 +5,6 @@ public class ProfileModel {
 	public ProfileModel() {
 		
 	}
-	
-	public UserModel getRandomUser() {
-		
-		return UserDataBaseModel.returnRandomUser();
-	}
-	
+
 
 }
