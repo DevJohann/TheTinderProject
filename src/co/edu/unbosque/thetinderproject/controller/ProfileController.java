@@ -27,7 +27,10 @@ public class ProfileController {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ArrayList<String> userData = UserDataBaseModel.returnRandomUser();				
-				
+				profileView.setNameLabelProfileView(userData.get(0));
+				profileView.setAgeLabelProfileView(userData.get(1));
+				profileView.setDescriptionLabelProfileView(userData.get(2));
+				profileView.setPictureSrc(userData.get(3));
 			}
 		});
 		

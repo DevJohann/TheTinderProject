@@ -19,10 +19,11 @@ public class ProfileView {
 	JButton dislikeButtonProfileView = new JButton("💩");
 	JButton backButtonProfileView = new JButton("Volver");
 	JLabel descriptionLabelProfileView = new JLabel("Me gusta el rock");
-	JLabel nameLabelProfileView = new JLabel("Edinson Mauricio Beltrán Gomez");
+	JLabel nameLabelProfileView = new JLabel("Edison Mauricio Beltrán Gomez");
 	JLabel ageLabelProfileView = new JLabel("20");
 	
 	JPanel panelProfileView = new JPanel();
+	String pictureSrc = "";
 	
 	public ProfileView() {
 		mainFrameProfileView = new JFrame();
@@ -61,8 +62,9 @@ public class ProfileView {
 		mainFrameProfileView.add(backButtonProfileView);
 		
 		//ImageView section
+		
+		
 		try { 
-			String pictureSrc = "";
 			BufferedImage imageProfile = ImageIO.read(new File(pictureSrc));
 			JLabel pictureProfileView = new JLabel(new ImageIcon(imageProfile));
 			panelProfileView.add(pictureProfileView);
@@ -93,7 +95,11 @@ public class ProfileView {
 		this.nameLabelProfileView.setText(nameLabelProfileView);
 	}
 	public void setAgeLabelProfileView(String ageLabelProfileView) {
-		this.ageLabelProfileView.setText(ageLabelProfileView);	}
+		this.ageLabelProfileView.setText(ageLabelProfileView);	
+		}
+	public void setPictureSrc(String pictureSrc) {
+		this.pictureSrc = pictureSrc;
+	}
 	
 
 	

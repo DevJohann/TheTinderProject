@@ -86,15 +86,23 @@ public class UserDataBaseModel {
 		UserModel returnableUser = UserDB.get(numRandom);
 		while(returnableUser.getUsernameUM().equals(WorkingUser.getUsernameUM())) {
 			numRandom = rand.nextInt(UserDB.size());
-			
-			
+			returnableUser = UserDB.get(numRandom);
+			if(returnableUser.getUsernameUM() != WorkingUser.getUsernameUM()) {
+				returnableData.add(returnableUser.getNameUM());
+				returnableData.add(returnableUser.getAgeUM()+"");
+				returnableData.add(returnableUser.getDescriptionUM());
+				returnableData.add(returnableUser.getPictureUM());
+				return returnableData;
+			}
+			else {
+				continue;
+			}
 		}
 		returnableData.add(returnableUser.getNameUM());
 		returnableData.add(returnableUser.getAgeUM()+"");
 		returnableData.add(returnableUser.getDescriptionUM());
 		returnableData.add(returnableUser.getPictureUM());
 		return returnableData;
-			
 	}
 	
 	
