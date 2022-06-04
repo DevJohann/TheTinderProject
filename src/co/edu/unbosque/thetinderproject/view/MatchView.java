@@ -2,16 +2,17 @@ package co.edu.unbosque.thetinderproject.view;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import java.awt.Font;
 
 public class MatchView {
 
 	
 		
-		JLabel mainLabelMatchView= new JLabel("Matches");
-		JLabel firstMatchView= new JLabel();
+		JLabel mainLabelMatchView= new JLabel("MATCHES");
+		JLabel firstMatchView= new JLabel(); //Prueba
 		JLabel secondMatchView= new JLabel();
 		JLabel thirdMatchView= new JLabel();
-		JLabel firstAgeMatchView = new JLabel();
+		JLabel firstAgeMatchView = new JLabel(); //Prueba
 		JLabel secondAgeMatchView = new JLabel();
 		JLabel thirdAgeMatchView = new JLabel();
 		JFrame mainFrameMatchView = new JFrame();
@@ -19,28 +20,35 @@ public class MatchView {
 		public MatchView() {
 			
 			mainFrameMatchView.setLayout(null);
-			mainFrameMatchView.setBounds(40, 20, 400, 400);
+			mainFrameMatchView.setBounds(450, 100, 500, 500);
 			mainFrameMatchView.setVisible(true);
 		
-			mainLabelMatchView.setBounds(40, 60, 300, 400); 
+			mainLabelMatchView.setBounds(120, 30, 400, 40); 
+			mainLabelMatchView.setFont(new Font("Serif", Font.BOLD, 25));
 			mainFrameMatchView.add(mainLabelMatchView);
 			
-			firstMatchView.setBounds(50, 60, 350, 400);
-			mainFrameMatchView.add(mainLabelMatchView);
+			firstMatchView.setBounds(50, 60,  400, 40);
+			firstMatchView.setFont(new Font("Serif", Font.BOLD, 22));
+			mainFrameMatchView.add(firstMatchView);
 			
-			secondMatchView.setBounds(50, 70, 340, 410);
+			secondMatchView.setBounds(50, 70, 400, 40);
+			secondMatchView.setFont(new Font("Serif", Font.BOLD, 22));
 			mainFrameMatchView.add(secondMatchView);
 			
-			thirdMatchView.setBounds(50, 70, 320, 420);
+			thirdMatchView.setBounds(50, 70, 400, 40);
+			thirdMatchView.setFont(new Font("Serif", Font.BOLD, 22));
 			mainFrameMatchView.add(thirdMatchView);
 			
-			firstAgeMatchView.setBounds(50, 60, 300, 400);
+			firstAgeMatchView.setBounds(50, 60, 400, 40);
+			firstAgeMatchView.setFont(new Font("Serif", Font.BOLD, 22));
 			mainFrameMatchView.add(firstAgeMatchView);
 			
-			secondAgeMatchView.setBounds(50, 60, 340, 420);
+			secondAgeMatchView.setBounds(50, 60, 400, 40);
+			secondAgeMatchView.setFont(new Font("Serif", Font.BOLD, 22));
 			mainFrameMatchView.add(secondAgeMatchView);
 			
-			thirdAgeMatchView.setBounds(60, 50, 350, 420);
+			thirdAgeMatchView.setBounds(60, 50, 400, 40);
+			thirdAgeMatchView.setFont(new Font("Serif", Font.BOLD, 22));
 			mainFrameMatchView.add(thirdAgeMatchView);
 			
 	}
@@ -49,7 +57,7 @@ public class MatchView {
 			return mainLabelMatchView;
 		}
 
-		public void setMainLabelMatchView(JLabel mainLabelMatchView) {
+		public void setMainLabelMatchView(JLabel mainLabelMatchView) { //Cambiar a String
 			this.mainLabelMatchView = mainLabelMatchView;
 		}
 
@@ -57,8 +65,8 @@ public class MatchView {
 			return firstMatchView;
 		}
 
-		public void setFirstMatchView(JLabel firstMatchView) {
-			this.firstMatchView = firstMatchView;
+		public void setFirstMatchView(String firstMatchView) {
+			this.firstMatchView.setText(firstMatchView);
 		}
 
 		public JLabel getSecondMatchView() {
@@ -81,8 +89,8 @@ public class MatchView {
 			return firstAgeMatchView;
 		}
 
-		public void setFirstAgeMatchView(JLabel firstAgeMatchView) {
-			this.firstAgeMatchView = firstAgeMatchView;
+		public void setFirstAgeMatchView(String firstAgeMatchView) {
+			this.firstAgeMatchView.setText(firstAgeMatchView);
 		}
 
 		public JLabel getSecondAgeMatchView() {

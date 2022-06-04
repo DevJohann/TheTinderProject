@@ -15,10 +15,11 @@ public class UserModel {
 	private String gender;
 	private String description;
 	private boolean firstTimer = true;
+	private int likesAmount = 0;
 	private ArrayList<String> gustos = new ArrayList<String>();
 	private ArrayList<String> preferences = new ArrayList<String>();
 	private ArrayList<UserModel> matchedUsers = new ArrayList<UserModel>();
-	
+	private ArrayList<UserModel> preMatchedUsers = new ArrayList<UserModel>();
 	
 	
 	public UserModel(String username, String password) {
@@ -29,6 +30,30 @@ public class UserModel {
 	public void addMatchedUser(UserModel userModel) {
 		matchedUsers.add(userModel);
 		
+	}
+	public ArrayList<UserModel> getMatchedUser(){
+		return matchedUsers;
+	}
+	public ArrayList<UserModel> getPreMatchedUser(){
+		return preMatchedUsers;
+	}
+	public void getOneLike(UserModel whoLiked) { //recibir like (de WorkingUser)
+		this.likesAmount++;
+		for(UserModel userModel : preMatchedUsers) { //Verificar si la persona que dió like ya está en preMatches
+			if(userModel.getUsernameUM().equals(whoLiked.getUsernameUM())) { // Si es así, entonces hizo match
+				preMatchedUsers.remove(whoLiked); //Eliminar de prematches
+				matchedUsers.add(whoLiked); //Agregar a matches
+				break;
+			}
+			else {
+				this.preMatchedUsers.add(whoLiked); //Si no estaba en preMatched, entonces ahora si
+				break;
+			}
+		}
+		
+	}
+	public int getLikes() {
+		return this.likesAmount;
 	}
 	public String getNameUM() {
 		return name;

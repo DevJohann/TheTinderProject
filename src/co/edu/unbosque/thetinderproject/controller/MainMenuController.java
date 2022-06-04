@@ -1,6 +1,8 @@
 package co.edu.unbosque.thetinderproject.controller;
 
 import java.awt.event.ActionEvent;
+import co.edu.unbosque.thetinderproject.model.MatchModel;
+import co.edu.unbosque.thetinderproject.view.MatchView;
 import java.awt.event.ActionListener;
 
 import co.edu.unbosque.thetinderproject.model.ProfileModel;
@@ -19,7 +21,17 @@ public class MainMenuController {
 				new ProfileController(new ProfileView(), new ProfileModel());
 			}
 		});
+		//Match button
+		mainMenuView.getMatchButtonMMView().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mainMenuView.getMainFrameMMView().getContentPane().removeAll();
+				mainMenuView.getMainFrameMMView().dispose();
+				new MatchController(new MatchView(), new MatchModel());
+			}
+		});
 		
+		//Logout button
 		mainMenuView.getLogOutButtonMMView().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

@@ -26,6 +26,7 @@ public class ProfileController {
 		profileView.getLikeProfileView().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				//Change random user
 				ArrayList<String> userData = UserDataBaseModel.returnRandomUser();	
 				profileView.getMainFrameProfileView().repaint();
 				profileView.setNameLabelProfileView(userData.get(0));
@@ -33,7 +34,10 @@ public class ProfileController {
 				profileView.setDescriptionLabelProfileView(userData.get(2));
 				//System.out.println(userData.get(3)); //Debug
 				profileView.setPictureSrc(userData.get(3));
-				System.out.println(profileView.getPictureSrc()); //Debug
+				//System.out.println(profileView.getPictureSrc()); //Debug Funciona
+				
+				//Add Like
+				UserDataBaseModel.addLike();
 			}
 		});
 		

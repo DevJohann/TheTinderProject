@@ -100,9 +100,10 @@ public class UserDataBaseModel {
 		return true;
 	}
 	
+	static int numRandom;
 	public static ArrayList<String> returnRandomUser() {
 		ArrayList<String> returnableData = new ArrayList<String>();
-		int numRandom = rand.nextInt(UserDB.size());
+		numRandom = rand.nextInt(UserDB.size());
 		//return UserDB.get(numRandom);
 		UserModel returnableUser = UserDB.get(numRandom);
 		while(returnableUser.getUsernameUM().equals(WorkingUser.getUsernameUM())) {
@@ -126,9 +127,28 @@ public class UserDataBaseModel {
 		return returnableData;
 	}
 
-	public void addLike() {
+	public static void addLike() { //El usuario actual envía un like
+		//Index de la persona que se está evaluando: numRandom
+		UserModel showingUser = UserDB.get(numRandom);
+		showingUser.getOneLike(WorkingUser); //La persona evaluada recibe un like, y tambien mira si hizo match o no
+		//System.out.println(showingUser.getLikes());
+	}
+	public static ArrayList<String> retrieveMatchedDB() {
+		ArrayList<UserModel> retrievedDB = WorkingUser.getMatchedUser();
+		ArrayList<String> retornableData = new ArrayList<String>();
+		//System.out.println(WorkingUser.getMatchedUser().size()); //Debug //Error
+		System.out.println(WorkingUser.getPreMatchedUser().size());
+		retornableData.add(retrievedDB.get(0).getNameUM());
+		retornableData.add(retrievedDB.get(0).getAgeUM() +"");
+		return retornableData;
+	}
+	
+	public static void checkMatches() {
+		//Con quien ha hecho match WorkingUser
 		
 	}
+	
+	
 	
 	
 	
