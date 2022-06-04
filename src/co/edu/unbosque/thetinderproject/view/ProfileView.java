@@ -26,6 +26,7 @@ public class ProfileView {
 	String pictureSrc = "";
 	
 	public ProfileView() {
+		
 		mainFrameProfileView = new JFrame();
 		mainFrameProfileView.setLayout(null);
 		mainFrameProfileView.setBounds(450, 80, 500, 600);
@@ -64,16 +65,24 @@ public class ProfileView {
 		//ImageView section
 		
 		
-		try { 
-			BufferedImage imageProfile = ImageIO.read(new File(pictureSrc));
-			JLabel pictureProfileView = new JLabel(new ImageIcon(imageProfile));
-			panelProfileView.add(pictureProfileView);
-			mainFrameProfileView.add(panelProfileView);
+		try { //No es problema 
+			BufferedImage imageProfile = ImageIO.read(new File(pictureSrc)); //No es problema
+			//JLabel pictureProfileView = new JLabel(); //Debug 
+			JLabel pictureProfileView = new JLabel(new ImageIcon(imageProfile)); //No es problema
+			pictureProfileView.setIcon(new ImageIcon(pictureSrc)); //
+			panelProfileView.add(pictureProfileView); //
+			mainFrameProfileView.add(panelProfileView); //
 		}
 		catch(IOException e) {
 			
 		}
 		
+		
+	}
+	
+	//Debug
+	public String getPictureSrc() {
+		return this.pictureSrc;
 	}
 	public JButton getLikeProfileView() {
 		return likeButtonProfileView;

@@ -17,10 +17,18 @@ public class UserModel {
 	private boolean firstTimer = true;
 	private ArrayList<String> gustos = new ArrayList<String>();
 	private ArrayList<String> preferences = new ArrayList<String>();
+	private ArrayList<UserModel> matchedUsers = new ArrayList<UserModel>();
+	
+	
 	
 	public UserModel(String username, String password) {
 		this.username = username;
 		this.password = password;
+		
+	}
+	public void addMatchedUser(UserModel userModel) {
+		matchedUsers.add(userModel);
+		
 	}
 	public String getNameUM() {
 		return name;

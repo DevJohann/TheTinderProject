@@ -91,6 +91,7 @@ public class UserDataBaseModel {
 		WorkingUser.setCityOfResidence(Ciudad);
 		WorkingUser.setDescription(Descripcion);
 		WorkingUser.setPicture(pictureSrc);
+		
 	}
 	public static boolean checkFilledData() {
 		if(WorkingUser.getDescriptionUM().length() == 0) {
@@ -123,6 +124,10 @@ public class UserDataBaseModel {
 		returnableData.add(returnableUser.getDescriptionUM());
 		returnableData.add(returnableUser.getPictureUM());
 		return returnableData;
+	}
+
+	public void addLike() {
+		
 	}
 	
 	
