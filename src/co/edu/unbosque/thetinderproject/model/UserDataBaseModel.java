@@ -137,10 +137,16 @@ public class UserDataBaseModel {
 		ArrayList<UserModel> retrievedDB = WorkingUser.getMatchedUser();
 		ArrayList<String> retornableData = new ArrayList<String>();
 		//System.out.println(WorkingUser.getMatchedUser().size()); //Debug //Error
-		System.out.println(WorkingUser.getPreMatchedUser().size());
-		retornableData.add(retrievedDB.get(0).getNameUM());
-		retornableData.add(retrievedDB.get(0).getAgeUM() +"");
-		return retornableData;
+		//System.out.println(WorkingUser.getPreMatchedUser().size()); //Debug
+		try {
+			retornableData.add(retrievedDB.get(0).getNameUM()); //Error IndexOutOfBounds
+			retornableData.add(retrievedDB.get(0).getAgeUM() +"");
+			return retornableData;
+		}
+		catch(IndexOutOfBoundsException e) {
+			System.out.println("Error :)");
+		}
+		return null;
 	}
 	
 	public static void checkMatches() {
