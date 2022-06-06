@@ -2,7 +2,10 @@ package co.edu.unbosque.thetinderproject.controller;
 
 import java.awt.event.ActionEvent;
 import co.edu.unbosque.thetinderproject.model.MatchModel;
+import co.edu.unbosque.thetinderproject.model.PreferencesModel;
 import co.edu.unbosque.thetinderproject.view.MatchView;
+import co.edu.unbosque.thetinderproject.view.PreferencesView;
+
 import java.awt.event.ActionListener;
 
 import co.edu.unbosque.thetinderproject.model.ProfileModel;
@@ -29,6 +32,18 @@ public class MainMenuController {
 				mainMenuView.getMainFrameMMView().dispose();
 				new MatchController(new MatchView(), new MatchModel());
 			}
+		});
+		
+		//Preferences Button
+		mainMenuView.getPreferencesButtonMMView().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mainMenuView.getMainFrameMMView().getContentPane().removeAll();
+				mainMenuView.getMainFrameMMView().dispose();
+				new PreferencesController(new PreferencesView(), new PreferencesModel());
+			}
+			
 		});
 		
 		//Logout button
