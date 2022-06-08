@@ -18,7 +18,7 @@ public class UserModel {
 	private int likesAmount = 0;
 	private ArrayList<String> gustos = new ArrayList<String>();
 	private ArrayList<String> preferences = new ArrayList<String>();
-	private ArrayList<UserModel> matchedUsers = new ArrayList<UserModel>();
+	//private ArrayList<UserModel> matchedUsers = new ArrayList<UserModel>();
 	private ArrayList<UserModel> preMatchedUsers = new ArrayList<UserModel>();
 	
 	
@@ -27,6 +27,8 @@ public class UserModel {
 		this.password = password;
 		
 	}
+	/* No pudimos profe :(
+	 
 	public void addMatchedUser(UserModel userModel) {
 		matchedUsers.add(userModel);
 		
@@ -52,6 +54,7 @@ public class UserModel {
 		}
 		
 	}
+	*/
 	public int getLikes() {
 		return this.likesAmount;
 	}
