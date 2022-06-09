@@ -14,9 +14,10 @@ public class UserModel {
 	private int age;
 	private String gender;
 	private String description;
+	private String rangeAge = "";
 	private boolean firstTimer = true;
 	private int likesAmount = 0;
-	private ArrayList<String> gustos = new ArrayList<String>();
+	//private ArrayList<String> gustos = new ArrayList<String>();
 	private ArrayList<String> preferences = new ArrayList<String>();
 	//private ArrayList<UserModel> matchedUsers = new ArrayList<UserModel>();
 	private ArrayList<UserModel> preMatchedUsers = new ArrayList<UserModel>();
@@ -88,6 +89,15 @@ public class UserModel {
 	public boolean getFirstTimerUM() {
 		return firstTimer;
 	}
+	public String getPreferredCity() {
+		return preferences.get(0);
+	}
+	public String getPreferredGender() {
+		return preferences.get(1);
+	}
+	public String getPreferredAge() {
+		return preferences.get(2);
+	}
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -102,6 +112,21 @@ public class UserModel {
 	}
 	public void setAge(int age) {
 		this.age = age;
+		if(age <= 25 && age >= 18) {
+			rangeAge = "A";
+		}
+		else if(age <= 30 && age > 25){
+			rangeAge = "B";
+		}
+		else if(age <= 45 && age > 30){
+			rangeAge = "C";
+		}
+		else if(age <= 60 && age > 45){
+			rangeAge = "D";
+		}
+	}
+	public String getAgeRange() {
+		return rangeAge;
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
@@ -111,6 +136,15 @@ public class UserModel {
 	}
 	public void setFirstTimer(boolean firstTimer) {
 		this.firstTimer = firstTimer;
+	}
+	public void setPreferredCity(String city) {
+		preferences.add(city);
+	}
+	public void setPreferredGender(String gender) {
+		preferences.add(gender);
+	}
+	public void setPreferredAge(String age) {
+		preferences.add(age);
 	}
 	
 	

@@ -17,28 +17,38 @@ public class UserDataBaseModel {
 		UserDB.add(new UserModel("admin", "1234"));
 		UserDB.get(0).setName("Admin");
 		UserDB.get(0).setAge(19);
+		UserDB.get(0).setGender("Hombre");
 		UserDB.get(0).setDescription("Descripción de prueba");
 		UserDB.get(0).setPicture("foto1.jpg");
+		UserDB.get(0).setCityOfResidence("Gama");
 		UserDB.add(new UserModel("root", "toor"));
 		UserDB.get(1).setName("ROOT");
-		UserDB.get(1).setAge(19);
+		UserDB.get(1).setAge(30);
+		UserDB.get(1).setGender("Mujer");
 		UserDB.get(1).setDescription("Descripción de prueba");
 		UserDB.get(1).setPicture("foto2.jpg");
+		UserDB.get(1).setCityOfResidence("Bogota");
 		UserDB.add(new UserModel("Mauricio", "1234"));
 		UserDB.get(2).setName("Edison Mauricio Beltran Garzón");
-		UserDB.get(2).setAge(19);
+		UserDB.get(2).setAge(40);
+		UserDB.get(2).setGender("Mujer");
 		UserDB.get(2).setDescription("Descripción de prueba");
 		UserDB.get(2).setPicture("foto3.jpg");
+		UserDB.get(2).setCityOfResidence("Cali");
 		UserDB.add(new UserModel("Jennifer", "1234"));
 		UserDB.get(3).setName("Jennifer Penagos");
-		UserDB.get(3).setAge(19);
+		UserDB.get(3).setAge(30);
+		UserDB.get(3).setGender("Mujer");
 		UserDB.get(3).setDescription("Descripción de prueba");
+		UserDB.get(3).setCityOfResidence("Medellin");
 		UserDB.get(3).setPicture("foto1.jpg");
 		UserDB.add(new UserModel("Johann", "1234"));
 		UserDB.get(4).setName("Johann Felipe");
-		UserDB.get(4).setAge(19);
+		UserDB.get(4).setAge(30);
+		UserDB.get(4).setGender("Mujer");
 		UserDB.get(4).setDescription("Descripción de prueba");
 		UserDB.get(4).setPicture("foto1.jpg");
+		UserDB.get(4).setCityOfResidence("Bogota");
 	}
 
 	// End of dummies section
@@ -118,7 +128,7 @@ public class UserDataBaseModel {
 		while (returnableUser.getUsernameUM().equals(WorkingUser.getUsernameUM())) {
 			numRandom = rand.nextInt(UserDB.size());
 			returnableUser = UserDB.get(numRandom);
-			if (returnableUser.getUsernameUM() != WorkingUser.getUsernameUM()) {
+			if ((returnableUser.getUsernameUM() != WorkingUser.getUsernameUM()) && (WorkingUser.getPreferredCity().equals(returnableUser.getPreferredCity()) && WorkingUser.getPreferredGender().equals(returnableUser.getPreferredGender()) && WorkingUser.getAgeRange().equals(returnableUser.getAgeRange()))) {
 				returnableData.add(returnableUser.getNameUM());
 				returnableData.add(returnableUser.getAgeUM() + "");
 				returnableData.add(returnableUser.getDescriptionUM());
@@ -128,6 +138,7 @@ public class UserDataBaseModel {
 			} else {
 				continue;
 			}
+			
 		}
 		returnableData.add(returnableUser.getNameUM());
 		returnableData.add(returnableUser.getAgeUM() + "");
@@ -135,6 +146,12 @@ public class UserDataBaseModel {
 		returnableData.add(returnableUser.getPictureUM());
 		MatchModel.setIdShowingUser(returnableUser);
 		return returnableData;
+	}
+	
+	public static void addPreferences(String city, String gender, String age) {
+		WorkingUser.setPreferredCity(city);
+		WorkingUser.setPreferredGender(gender);
+		WorkingUser.setPreferredAge(age);
 	}
 
 	public static void addLike() { // El usuario actual envía un like

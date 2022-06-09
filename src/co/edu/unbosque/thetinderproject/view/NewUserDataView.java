@@ -13,6 +13,7 @@ public class NewUserDataView {
 	String[] genders = {"Hombre", "Mujer"};
 	String[] cities = {"Bogotá", "Cali", "Medellín", "Gama"};
 	String[] sources = {"foto1.jpg", "foto2.jpg", "foto3.jpg"};
+	String[] countries = {"Colombia", "Venezuela", "Argentina", "Brasil"};
 	JLabel genderLabelNewUD = new JLabel("Genero:");
 	JLabel ageLabelNewUD = new JLabel("Edad:");
 	JLabel nationalityLabelNewUD = new JLabel("Nacionalidad:");
@@ -25,8 +26,8 @@ public class NewUserDataView {
 	JComboBox<String> cityOfResidenceFieldNewUD = new JComboBox(cities);
 	JTextField nameFieldNewUD = new JTextField("");
 	JComboBox<String> genderComboBoxNewUD = new JComboBox<String>(genders);
+	JComboBox<String> countriesComboBoxNewUD = new JComboBox<String>(countries);
 	JTextField ageFieldNewUD = new JTextField("");
-	JTextField nationalityFieldNewUD = new JTextField("");
 	JTextArea descriptionTextAreaNewUD = new JTextArea("");
 	JButton sendDataButtonNewUD = new JButton("Enviar");
 	JButton backButtonNewUD = new JButton("Volver");
@@ -64,6 +65,9 @@ public class NewUserDataView {
 		genderComboBoxNewUD.setSelectedIndex(0);
 		mainFrameNewUserDataView.add(genderComboBoxNewUD);
 		
+		//
+		
+		
 		//AgeLabel section (Add try-catch)
 		ageLabelNewUD.setBounds(70, 170, 400, 40);
 		ageLabelNewUD.setFont(new Font("Serif", Font.BOLD, 16));
@@ -83,13 +87,15 @@ public class NewUserDataView {
 		mainFrameNewUserDataView.add(pictureComboBoxNewUD);
 		
 		//NationalityLabel section
-		nationalityLabelNewUD.setBounds(70, 200, 400, 40);
+		nationalityLabelNewUD.setBounds(70, 196, 400, 40);
 		nationalityLabelNewUD.setFont(new Font("Serif", Font.BOLD, 16));
 		mainFrameNewUserDataView.add(nationalityLabelNewUD);
 		
-		//NationalityField section
-		nationalityFieldNewUD.setBounds(180, 205, 150, 25);
-		mainFrameNewUserDataView.add(nationalityFieldNewUD);
+		//
+		countriesComboBoxNewUD.setBounds(170, 205, 150, 25);
+		countriesComboBoxNewUD.setSelectedIndex(0);
+		mainFrameNewUserDataView.add(countriesComboBoxNewUD);
+		
 		
 		// DescriptionLabel Section
 		descriptionLabelNewUD.setBounds(70, 260, 400, 40);
@@ -129,9 +135,7 @@ public class NewUserDataView {
 	public String getNameFieldNewUD() {
 		return this.nameFieldNewUD.getText();
 	}
-	public String getNationalityField() {
-		return this.nationalityFieldNewUD.getText();
-	}
+
 	public String getGenderComboBoxNewUD() {
 		return this.genderComboBoxNewUD.getItemAt(genderComboBoxNewUD.getSelectedIndex());
 	}
@@ -164,6 +168,11 @@ public class NewUserDataView {
 	public String getPictureComboBoxNewUD() {
 		return pictureComboBoxNewUD.getItemAt(pictureComboBoxNewUD.getSelectedIndex());
 	}
+	public String getCountriesComboBoxNewUD() {
+		return countriesComboBoxNewUD.getItemAt(countriesComboBoxNewUD.getSelectedIndex());
+	}
+	
+	
 	
 	
 }

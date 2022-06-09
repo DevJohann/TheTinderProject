@@ -27,7 +27,7 @@ public class NewUserDataController {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					String name = NUDView.getNameFieldNewUD();
-					String nationality = NUDView.getNationalityField();
+					String nationality = NUDView.getCountriesComboBoxNewUD();
 					int age = Integer.parseInt(NUDView.getAgeFieldNewUD());
 					String gender = NUDView.getGenderComboBoxNewUD();
 					String cityOfResidence = NUDView.getCityOfResidenceNewUD();

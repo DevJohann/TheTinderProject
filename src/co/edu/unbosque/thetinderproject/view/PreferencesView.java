@@ -12,7 +12,7 @@ public class PreferencesView {
 	JButton sendDataButtonPreferences = new JButton("Enviar");
 	String[] cityPreference = {"Bogotá", "Cali", "Medellín", "Gama"}; 
 	String[] gendersPreference = {"Hombre", "Mujer", "Otro"};
-	String [] agePreference = {"18-25", "25-30", "30-45", "45-60", "60+"};
+	String [] agePreference = {"18-25", "25-30", "30-45", "45-60"};
 	JLabel cityPreferenceLabel = new JLabel("Ciudad de preferencia:");
 	JLabel genderPreferenceLabel = new JLabel("Genero de preferencia:");
 	JLabel agePreferenceLabel = new JLabel("Rango de edad:");
@@ -75,19 +75,43 @@ public class PreferencesView {
 		
 		
 	}
-	
-	public void showPreferencesView() {
-		
-	}
-	//public String getCheckBoxValuePView() {
-		//return this.mainCheckBoxPView.getSelectedIcon();
-	//}
+
 	public JButton getBackButtonPreferences() {
 		return this.backButtonPreferencesView;
+	}
+	public JButton getSendDataButtonPreferences() {
+		return this.sendDataButtonPreferences;
 	}
 
 	public JFrame getMainFramePreferencesView() {
 		return mainFramePreferencesView;
 	}
+
+	public String getCityPreferenceBox() {
+		return cityPreferenceBox.getItemAt(cityPreferenceBox.getSelectedIndex());
+	}
+	public String getGenderPreferenceBox() {
+		return genderPreferenceBox.getItemAt(genderPreferenceBox.getSelectedIndex());
+	}
+	public String getAgePreferenceBox() {
+		if(agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex()) == "0"){
+			return "A";
+		}
+		else if(agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex()) == "1") {
+			return "B";
+		}
+		else if(agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex()) == "3") {
+			return "C";
+		}
+		else if(agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex()) == "4") {
+			return "D";
+		}
+		else {
+			return null;
+		}
+	
+		//return agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex());
+	}
+	
 	
 }
