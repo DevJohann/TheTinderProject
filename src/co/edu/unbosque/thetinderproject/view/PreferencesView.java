@@ -10,12 +10,14 @@ public class PreferencesView {
 	JLabel mainLabelPreferencesView = new JLabel("Preferencias");
 	JButton backButtonPreferencesView = new JButton("Volver");
 	JButton sendDataButtonPreferences = new JButton("Enviar");
-	String[] cityPreference = {"Bogotá", "Cali", "Medellín", "Gama"}; 
+	String[] cityPreference = {"Bogota", "Cali", "Medellin", "Gama"}; 
 	String[] gendersPreference = {"Hombre", "Mujer", "Otro"};
+	//							  A		   B 		C		 D
 	String [] agePreference = {"18-25", "25-30", "30-45", "45-60"};
 	JLabel cityPreferenceLabel = new JLabel("Ciudad de preferencia:");
 	JLabel genderPreferenceLabel = new JLabel("Genero de preferencia:");
 	JLabel agePreferenceLabel = new JLabel("Rango de edad:");
+	JLabel confirmLabel = new JLabel();
 	JComboBox<String> cityPreferenceBox = new JComboBox(cityPreference);
 	JComboBox<String> genderPreferenceBox = new JComboBox(gendersPreference);
 	JComboBox<String> agePreferenceBox = new JComboBox(agePreference);
@@ -73,6 +75,11 @@ public class PreferencesView {
 		backButtonPreferencesView.setBounds(15, 415, 100, 30);
 		mainFramePreferencesView.add(backButtonPreferencesView);
 		
+		//ConfirmLabel Section
+		confirmLabel.setBounds(200, 400, 400, 40);
+		confirmLabel.setFont(new Font("Serif", Font.BOLD, 16));
+		mainFramePreferencesView.add(confirmLabel);
+		
 		
 	}
 
@@ -94,16 +101,17 @@ public class PreferencesView {
 		return genderPreferenceBox.getItemAt(genderPreferenceBox.getSelectedIndex());
 	}
 	public String getAgePreferenceBox() {
-		if(agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex()) == "0"){
+		System.out.println(agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex()));
+		if(agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex()).equals("18-25")){
 			return "A";
 		}
-		else if(agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex()) == "1") {
+		else if(agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex()).equals("25-30")) {
 			return "B";
 		}
-		else if(agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex()) == "3") {
+		else if(agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex()).equals("30-45")) {
 			return "C";
 		}
-		else if(agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex()) == "4") {
+		else if(agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex()).equals("45-60")) {
 			return "D";
 		}
 		else {
@@ -113,5 +121,8 @@ public class PreferencesView {
 		//return agePreferenceBox.getItemAt(agePreferenceBox.getSelectedIndex());
 	}
 	
+	public void setConfirmLabel(String value) {
+		confirmLabel.setText(value);
+	}
 	
 }

@@ -39,10 +39,13 @@ public class NewUserDataController {
 					else if(nationality.length() == 0) {
 						NUDView.setErrorMessageNewUD("Debe llenar todos los campos");
 					}
+					else if(age < 18) {
+						NUDView.setErrorMessageNewUD("Debe ser mayor de 18");
+					}
 					else {
 						UserDataBaseModel.setUserNewData(name, nationality, age, gender, cityOfResidence, userDescription, pictureSource);
 						if(UserDataBaseModel.checkFilledData() == false) {
-							NUDView.setErrorMessageNewUD("Debe ingresar una descripción");
+							NUDView.setErrorMessageNewUD("Debe ingresar una descripciï¿½n");
 						}
 						else {
 							NUDView.getMainFrameNewUD().getContentPane().removeAll();
@@ -50,10 +53,11 @@ public class NewUserDataController {
 							new MainMenuController(new MainMenuView());
 						}
 					}
+					
 						
 				}
 				catch(NumberFormatException x) {
-					NUDView.setErrorMessageNewUD("Debe ingresar una edad válida");
+					NUDView.setErrorMessageNewUD("Debe ingresar una edad vï¿½lida");
 				}
 				
 			}

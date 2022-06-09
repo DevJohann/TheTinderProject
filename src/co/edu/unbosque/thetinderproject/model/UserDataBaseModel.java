@@ -2,6 +2,9 @@ package co.edu.unbosque.thetinderproject.model;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import com.sun.corba.se.spi.orbutil.threadpool.Work;
+
 import co.edu.unbosque.thetinderproject.model.*;
 
 public class UserDataBaseModel {
@@ -10,45 +13,62 @@ public class UserDataBaseModel {
 	// (Application local database)
 	private static ArrayList<UserModel> UserDB = new ArrayList<UserModel>();
 	private static UserModel WorkingUser;
+	private static UserModel ShowingUser;
 	public static Random rand = new Random();
 
 	// Dummies section
 	public static void addDummies() {
 		UserDB.add(new UserModel("admin", "1234"));
 		UserDB.get(0).setName("Admin");
-		UserDB.get(0).setAge(19);
+		UserDB.get(0).setAge(26);
 		UserDB.get(0).setGender("Hombre");
 		UserDB.get(0).setDescription("Descripción de prueba");
 		UserDB.get(0).setPicture("foto1.jpg");
 		UserDB.get(0).setCityOfResidence("Gama");
+		UserDB.get(0).setPreferredCity("Bogota");
+		UserDB.get(0).setPreferredGender("Hombre");
+		UserDB.get(0).setPreferredAge("A");
 		UserDB.add(new UserModel("root", "toor"));
 		UserDB.get(1).setName("ROOT");
-		UserDB.get(1).setAge(30);
+		UserDB.get(1).setAge(19);
 		UserDB.get(1).setGender("Mujer");
 		UserDB.get(1).setDescription("Descripción de prueba");
 		UserDB.get(1).setPicture("foto2.jpg");
 		UserDB.get(1).setCityOfResidence("Bogota");
+		UserDB.get(1).setPreferredCity("Gama");
+		UserDB.get(1).setPreferredGender("Mujer");
+		UserDB.get(1).setPreferredAge("B");
 		UserDB.add(new UserModel("Mauricio", "1234"));
 		UserDB.get(2).setName("Edison Mauricio Beltran Garzón");
 		UserDB.get(2).setAge(40);
-		UserDB.get(2).setGender("Mujer");
+		UserDB.get(2).setGender("Hombre");
 		UserDB.get(2).setDescription("Descripción de prueba");
 		UserDB.get(2).setPicture("foto3.jpg");
 		UserDB.get(2).setCityOfResidence("Cali");
+		UserDB.get(2).setPreferredCity("Cali");
+		UserDB.get(2).setPreferredGender("Mujer");
+		UserDB.get(2).setPreferredAge("D");
 		UserDB.add(new UserModel("Jennifer", "1234"));
 		UserDB.get(3).setName("Jennifer Penagos");
-		UserDB.get(3).setAge(30);
+		UserDB.get(3).setAge(21);
 		UserDB.get(3).setGender("Mujer");
 		UserDB.get(3).setDescription("Descripción de prueba");
 		UserDB.get(3).setCityOfResidence("Medellin");
 		UserDB.get(3).setPicture("foto1.jpg");
+		UserDB.get(3).setPreferredCity("Bogota");
+		UserDB.get(3).setPreferredGender("Hombre");
+		UserDB.get(3).setPreferredAge("A");
 		UserDB.add(new UserModel("Johann", "1234"));
 		UserDB.get(4).setName("Johann Felipe");
 		UserDB.get(4).setAge(30);
-		UserDB.get(4).setGender("Mujer");
+		UserDB.get(4).setGender("Hombre");
 		UserDB.get(4).setDescription("Descripción de prueba");
 		UserDB.get(4).setPicture("foto1.jpg");
 		UserDB.get(4).setCityOfResidence("Bogota");
+		UserDB.get(4).setPreferredCity("Medellin");
+		UserDB.get(4).setPreferredGender("Mujer");
+		UserDB.get(4).setPreferredAge("D");
+		
 	}
 
 	// End of dummies section
@@ -128,11 +148,15 @@ public class UserDataBaseModel {
 		while (returnableUser.getUsernameUM().equals(WorkingUser.getUsernameUM())) {
 			numRandom = rand.nextInt(UserDB.size());
 			returnableUser = UserDB.get(numRandom);
-			if ((returnableUser.getUsernameUM() != WorkingUser.getUsernameUM()) && (WorkingUser.getPreferredCity().equals(returnableUser.getPreferredCity()) && WorkingUser.getPreferredGender().equals(returnableUser.getPreferredGender()) && WorkingUser.getAgeRange().equals(returnableUser.getAgeRange()))) {
+			if ((returnableUser.getUsernameUM() != WorkingUser.getUsernameUM()) && (WorkingUser.getPreferredCity().equals(returnableUser.getCityOfResidenceUM()) || WorkingUser.getPreferredGender().equals(returnableUser.getGenderUM()) || WorkingUser.getPreferredAge().equals(returnableUser.getAgeRange())) && returnableUser.getShownUM() == false) { //
+				System.out.println(WorkingUser.getPreferredGender() + " / " + returnableUser.getGenderUM());
+				System.out.println(WorkingUser.getPreferredAge() + " / " + returnableUser.getAgeRange());
+				System.out.println(WorkingUser.getPreferredCity() + " / " + returnableUser.getCityOfResidenceUM());
 				returnableData.add(returnableUser.getNameUM());
 				returnableData.add(returnableUser.getAgeUM() + "");
 				returnableData.add(returnableUser.getDescriptionUM());
 				returnableData.add(returnableUser.getPictureUM());
+				ShowingUser = returnableUser;
 				MatchModel.setIdShowingUser(returnableUser);
 				return returnableData;
 			} else {
@@ -140,15 +164,31 @@ public class UserDataBaseModel {
 			}
 			
 		}
+		return null;
+	
+		/*
+		System.out.println(WorkingUser.getPreferredGender() + " / " + returnableUser.getGenderUM());
 		returnableData.add(returnableUser.getNameUM());
 		returnableData.add(returnableUser.getAgeUM() + "");
 		returnableData.add(returnableUser.getDescriptionUM());
 		returnableData.add(returnableUser.getPictureUM());
 		MatchModel.setIdShowingUser(returnableUser);
 		return returnableData;
+		*/
 	}
-	
+	public static void setShown(boolean value) {
+		ShowingUser.setShownUM(true);
+	}
+	public static void resetShown() {
+		for(UserModel user : UserDB) {
+			user.setShownUM(false);
+		}
+	}
+	public static ArrayList<UserModel> retrieveWUMatchesDB(){ //WU = WorkingUser
+		return WorkingUser.retrieveMatchesDB();
+	}
 	public static void addPreferences(String city, String gender, String age) {
+		WorkingUser.resetPreferences(); //Para que no se acumulen
 		WorkingUser.setPreferredCity(city);
 		WorkingUser.setPreferredGender(gender);
 		WorkingUser.setPreferredAge(age);
@@ -156,11 +196,15 @@ public class UserDataBaseModel {
 
 	public static void addLike() { // El usuario actual envía un like
 		// Index de la persona que se está evaluando: numRandom
-		UserModel showingUser = UserDB.get(numRandom);
+		//UserModel showingUser = UserDB.get(numRandom);
 		//showingUser.getOneLike(WorkingUser); // La persona evaluada recibe un like, y tambien mira si hizo match o no
 		// System.out.println(showingUser.getLikes());
+		WorkingUser.liked(ShowingUser);
+		if(ShowingUser.checkMatch(WorkingUser)) {//Ahora será matchedUsers de ShowingUser el que será recorrido para verificar que WorkingUser esté ahí
+			System.out.println("MATCH!"); //FUNCIONA :D
+		}
 	}
-
+/*
 	public static ArrayList<String> retrieveMatchedDB() {
 		//ArrayList<UserModel> retrievedDB = WorkingUser.getMatchedUser();
 		ArrayList<String> retornableData = new ArrayList<String>();
@@ -175,7 +219,7 @@ public class UserDataBaseModel {
 		}
 		return null;
 	}
-
+*/
 	public static void checkMatches() {
 		// Con quien ha hecho match WorkingUser
 

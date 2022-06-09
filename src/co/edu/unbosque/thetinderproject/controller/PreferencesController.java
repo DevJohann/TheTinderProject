@@ -29,6 +29,7 @@ public class PreferencesController {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				UserDataBaseModel.addPreferences(preferencesView.getCityPreferenceBox(), preferencesView.getGenderPreferenceBox(), preferencesView.getAgePreferenceBox());
+				preferencesView.setConfirmLabel("Preferencias aplicadas");
 			}
 			
 		});

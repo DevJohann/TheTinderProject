@@ -16,10 +16,11 @@ public class UserModel {
 	private String description;
 	private String rangeAge = "";
 	private boolean firstTimer = true;
+	private boolean shown = false; //Para controlar que no aparezca más de una vez
 	private int likesAmount = 0;
 	//private ArrayList<String> gustos = new ArrayList<String>();
 	private ArrayList<String> preferences = new ArrayList<String>();
-	//private ArrayList<UserModel> matchedUsers = new ArrayList<UserModel>();
+	private ArrayList<UserModel> matchedUsers = new ArrayList<UserModel>();
 	private ArrayList<UserModel> preMatchedUsers = new ArrayList<UserModel>();
 	
 	
@@ -56,6 +57,27 @@ public class UserModel {
 		
 	}
 	*/
+	public void liked(UserModel userModel) { //WorkingUser liked (who) //Add to preMatched
+		System.out.println("Liked!");
+		preMatchedUsers.add(userModel);
+		//return true;
+	}
+	public boolean checkMatch(UserModel userModel) { //After liked()
+		for(UserModel user : preMatchedUsers) { 
+			if(user.getUsernameUM().equals(userModel.getUsernameUM())) { //If userModel already exists in prematched
+				System.out.println("Matched!");
+				matchedUsers.add(userModel); //Add to matched users
+				return true;
+			}
+		}
+		return false;
+	}
+	public ArrayList<UserModel> retrieveMatchesDB(){
+		return this.matchedUsers;
+	}
+	public void resetPreferences() {
+		preferences.clear();
+	}
 	public int getLikes() {
 		return this.likesAmount;
 	}
@@ -80,6 +102,7 @@ public class UserModel {
 	public int getAgeUM() {
 		return age;
 	}
+	
 	public String getGenderUM() {
 		return gender;
 	}
@@ -89,7 +112,14 @@ public class UserModel {
 	public boolean getFirstTimerUM() {
 		return firstTimer;
 	}
+	public boolean getShownUM() {
+		return this.shown;
+	}
+	public void setShownUM(boolean value) {
+		this.shown = value;
+	}
 	public String getPreferredCity() {
+		//System.out.println(preferences.size()); //Debug
 		return preferences.get(0);
 	}
 	public String getPreferredGender() {
@@ -144,7 +174,7 @@ public class UserModel {
 		preferences.add(gender);
 	}
 	public void setPreferredAge(String age) {
-		preferences.add(age);
+		preferences.add(age); //Must be AgeRange value (A, B, C, D)
 	}
 	
 	
