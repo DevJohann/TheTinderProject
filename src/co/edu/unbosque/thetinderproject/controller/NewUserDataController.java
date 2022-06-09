@@ -45,7 +45,7 @@ public class NewUserDataController {
 					else {
 						UserDataBaseModel.setUserNewData(name, nationality, age, gender, cityOfResidence, userDescription, pictureSource);
 						if(UserDataBaseModel.checkFilledData() == false) {
-							NUDView.setErrorMessageNewUD("Debe ingresar una descripciï¿½n");
+							NUDView.setErrorMessageNewUD("Debe ingresar una descripción");
 						}
 						else {
 							NUDView.getMainFrameNewUD().getContentPane().removeAll();
@@ -57,7 +57,7 @@ public class NewUserDataController {
 						
 				}
 				catch(NumberFormatException x) {
-					NUDView.setErrorMessageNewUD("Debe ingresar una edad vï¿½lida");
+					NUDView.setErrorMessageNewUD("Debe ingresar una edad valida");
 				}
 				
 			}

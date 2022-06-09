@@ -43,6 +43,12 @@ public class ProfileController {
 						//Add Like
 						UserDataBaseModel.addLike();
 						success = true;
+						boolean x = UserDataBaseModel.checkShowns();
+						if(x == true) {
+							success = true;
+							break;
+						}
+						
 					}catch(NullPointerException i) {
 						success = false;
 						System.out.println("Ignorado");

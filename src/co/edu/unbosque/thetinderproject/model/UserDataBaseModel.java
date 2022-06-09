@@ -3,7 +3,6 @@ package co.edu.unbosque.thetinderproject.model;
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.sun.corba.se.spi.orbutil.threadpool.Work;
 
 import co.edu.unbosque.thetinderproject.model.*;
 
@@ -22,7 +21,7 @@ public class UserDataBaseModel {
 		UserDB.get(0).setName("Admin");
 		UserDB.get(0).setAge(26);
 		UserDB.get(0).setGender("Hombre");
-		UserDB.get(0).setDescription("Descripci贸n de prueba");
+		UserDB.get(0).setDescription("Descripci髇 de prueba");
 		UserDB.get(0).setPicture("foto1.jpg");
 		UserDB.get(0).setCityOfResidence("Gama");
 		UserDB.get(0).setPreferredCity("Bogota");
@@ -32,7 +31,7 @@ public class UserDataBaseModel {
 		UserDB.get(1).setName("ROOT");
 		UserDB.get(1).setAge(19);
 		UserDB.get(1).setGender("Mujer");
-		UserDB.get(1).setDescription("Descripci贸n de prueba");
+		UserDB.get(1).setDescription("Descripci髇 de prueba");
 		UserDB.get(1).setPicture("foto2.jpg");
 		UserDB.get(1).setCityOfResidence("Bogota");
 		UserDB.get(1).setPreferredCity("Gama");
@@ -42,7 +41,7 @@ public class UserDataBaseModel {
 		UserDB.get(2).setName("Edison Mauricio Beltran Garz贸n");
 		UserDB.get(2).setAge(40);
 		UserDB.get(2).setGender("Hombre");
-		UserDB.get(2).setDescription("Descripci贸n de prueba");
+		UserDB.get(2).setDescription("Descripci髇 de prueba");
 		UserDB.get(2).setPicture("foto3.jpg");
 		UserDB.get(2).setCityOfResidence("Cali");
 		UserDB.get(2).setPreferredCity("Cali");
@@ -52,7 +51,7 @@ public class UserDataBaseModel {
 		UserDB.get(3).setName("Jennifer Penagos");
 		UserDB.get(3).setAge(21);
 		UserDB.get(3).setGender("Mujer");
-		UserDB.get(3).setDescription("Descripci贸n de prueba");
+		UserDB.get(3).setDescription("Descripci髇 de prueba");
 		UserDB.get(3).setCityOfResidence("Medellin");
 		UserDB.get(3).setPicture("foto1.jpg");
 		UserDB.get(3).setPreferredCity("Bogota");
@@ -62,16 +61,59 @@ public class UserDataBaseModel {
 		UserDB.get(4).setName("Johann Felipe");
 		UserDB.get(4).setAge(30);
 		UserDB.get(4).setGender("Hombre");
-		UserDB.get(4).setDescription("Descripci贸n de prueba");
+		UserDB.get(4).setDescription("Descripci髇 de prueba");
 		UserDB.get(4).setPicture("foto1.jpg");
 		UserDB.get(4).setCityOfResidence("Bogota");
 		UserDB.get(4).setPreferredCity("Medellin");
 		UserDB.get(4).setPreferredGender("Mujer");
 		UserDB.get(4).setPreferredAge("D");
+		UserDB.add(new UserModel("Edison", "1234"));
+		UserDB.get(5).setName("Edison Garzon");
+		UserDB.get(5).setAge(45);
+		UserDB.get(5).setGender("Hombre");
+		UserDB.get(5).setDescription("Descripci髇 de prueba");
+		UserDB.get(5).setPicture("foto3.jpg");
+		UserDB.get(5).setCityOfResidence("Bogota");
+		UserDB.get(5).setPreferredCity("Medellin");
+		UserDB.get(5).setPreferredGender("Mujer");
+		UserDB.get(5).setPreferredAge("D");
+		UserDB.add(new UserModel("Alberto", "1234"));
+		UserDB.get(6).setName("Alberto Salas");
+		UserDB.get(6).setAge(18);
+		UserDB.get(6).setGender("Hombre");
+		UserDB.get(6).setDescription("Descripci髇 de prueba");
+		UserDB.get(6).setPicture("foto3.jpg");
+		UserDB.get(6).setCityOfResidence("Bogota");
+		UserDB.get(6).setPreferredCity("Medellin");
+		UserDB.get(6).setPreferredGender("Mujer");
+		UserDB.get(6).setPreferredAge("D");
+		UserDB.add(new UserModel("Eva", "1234"));
+		UserDB.get(7).setName("Eva Maria");
+		UserDB.get(7).setAge(52);
+		UserDB.get(7).setGender("Mujer");
+		UserDB.get(7).setDescription("Descripci髇 de prueba");
+		UserDB.get(7).setPicture("foto2.jpg");
+		UserDB.get(7).setCityOfResidence("Bogota");
+		UserDB.get(7).setPreferredCity("Medellin");
+		UserDB.get(7).setPreferredGender("Mujer");
+		UserDB.get(7).setPreferredAge("D");
 		
 	}
 
 	// End of dummies section
+	
+	public static boolean checkShowns() {
+		int contador = 0;
+		for(UserModel checkShowns: UserDB) {
+			if(checkShowns.getShownUM() == true) {
+				contador++;
+			}
+		}
+		if(contador < UserDB.size()) {
+			return false;
+		}
+		return true;
+	}
 
 	public static UserModel searchUser(String username) {
 		for (UserModel user : UserDB) {
